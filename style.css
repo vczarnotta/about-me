@@ -1,23 +1,26 @@
+/*Reset och grundinställningar*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Typografi*/
+
 body {
     background-color: rgb(241, 234, 225);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(90, 35, 26);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
     padding: 40px 20px;
 }
 
 h1, h2, p, ul {
-    text-align: justify;
-    color: rgb(90, 35, 26);
+    text-align: justify;    
 }
 
 h1 {
@@ -31,8 +34,9 @@ h2 {
     margin-bottom: 0.75em;
 }
 
-section.section-1,
-section.section-2 {
+/*Layout och positionering*/
+
+section {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -41,7 +45,7 @@ section.section-2 {
     margin-bottom: 20px;
 }
 
-section.section-1 img {
+section img {
     width: 100%;
     display: block;
     margin-bottom: 20px;
@@ -49,12 +53,7 @@ section.section-1 img {
 
 section.section-1 p,
 section.section-1 li {
-margin-bottom: 1em;
-}
-
-.title-image {
-    height: 150px;
-    object-fit: cover;
+    margin-bottom: 1em;
 }
 
 .two-column-layout {
@@ -65,15 +64,14 @@ margin-bottom: 1em;
     align-items: stretch;
 }
 
-@media (max-width: 600px) {
-    .two-column-layout {
-        grid-template-columns: 1fr;
-    }
+section li {
+    list-style-position: inside;
+    text-align: left;
+    text-indent: -20px;
+    padding-left: 20px;
 }
 
-
-
-
+/*Specifika sektioner*/
 
 section.section-2 {
     background-color: rgb(90, 35, 26);
@@ -87,9 +85,68 @@ section.section-2 li {
 }
 
 section.section-2 h2 {
-margin-bottom: -5px;
-
+    margin-bottom: -5px;
 }
+
+section.section-2 li {
+    margin-top: 0.5em;
+    font-size: small;
+    padding-left: 40px;
+}
+
+.title-image {
+    height: 150px;
+    object-fit: cover;
+}
+
+.section-3 h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.box-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    background-color: rgb(90, 35, 26);
+    color: rgb(241, 234, 225);
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 7px rgb(145, 134, 134);
+}
+
+.description {
+    background-color: rgb(227, 219, 208);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 7px rgb(145, 134, 134);
+}
+
+.link-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: small;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    gap: 15px;
+    font-size: x-small;
+}
+
+a {
+    color: rgb(90, 35, 26);
+    text-decoration: none;
+}
+
+/*Komponenter och moduler*/
 
 .work-place {
     font-weight: bold;
@@ -104,14 +161,14 @@ margin-bottom: -5px;
     font-size: 95%;
 }
 
-section.section-2 ul {
-    padding-left: 20px;
+/*Responsiv design*/
+
+@media (max-width: 600px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
-section.section-2 li {
-    list-style-position: inside;
-    text-indent: -20px;
-    padding-left: 20px;
-    margin-top: 0.5em;
-    font-size: small;
+a:hover {
+   text-decoration: underline; 
 }
